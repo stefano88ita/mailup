@@ -259,9 +259,9 @@ class MailupClient {
    protected function create_mail_from_message($subject = "", $message = "", $attach = []) {
       try {
          $email = [
-            "Subject" => str_replace("/", "\\/", $subject),
+            "Subject" => $subject,
             "idList" => $this->listId,
-            "Content" => str_replace("/", "\\/", $message),
+            "Content" => $message,
             "Embed" => true,
             "IsConfirmation" => true,
             "Fields" => [],
